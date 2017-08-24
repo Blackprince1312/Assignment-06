@@ -18,74 +18,67 @@
 ////                                               ////
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
-
-
 // Q1
 // Write a function called `sum` that takes two
 // parameters and returns the sum of those 2 numbers.
-function sum(num1 , num2  ){
-	return num1 , num2
 
+function sum(a, b) {
+  var added = a + b;
+  return added
 }
-
-var total = sum(10,35)
-
+var sum1 = sum(2, 3)
+console.log(sum1);
 // Q2
 // Write a function named `avg` that takes 3 parameters
 // and returns the average of those 3 numbers.
-function avg(E , I , O){
-	return (E + I + O)/3;
+
+function avg(avg1, avg2, avg3) {
+  var avg = (avg1 + avg2 + avg3) / 3
+  return avg
 }
-avg (15,35,40)
-
-
+var avgCalc = avg(12, 32, 43)
+console.log(avgCalc);
 // Q3
 // Write a function called `getLength` that takes one
 // parameter (a string) and returns the length
-function getlength(str){
-	return str.length;
+
+function getLength(string) {
+  var length = string.length
+  return length
 }
 
-getlength("bib")
-
-
-
-
+var length1 = getLength('hello world')
+console.log(length1);
 // Q4
 // Write a function called `greaterThan` that takes
 // two parameters and returns `true` if the second
 // parameter is greater than the first. Otherwise
 // the function should return `false`.
 
-function greaterthan(bobo , bibi){
-	if (bobo > bibi) {
-		return true;
-	} else {
-		return false;
-	}
+function greaterThan(param1, param2) {
+  if (param1 < param2) {
+    return true
+  } else {
+    return false
+  }
 }
-
-greaterthan(14, 15);
-
-
-
+var greaterThan1 = greaterThan(12, 14)
+console.log(greaterThan1);
 // Q5
 // Write a function called `greet` that takes a
 // single parameter and returns a string that
 // is formated like "Hello, Name!" where *Name*
 // is the parameter that was passed in.
 
-function greet(name){
-    return "hello, " + name;
-
+function greet(param1) {
+  var string = param1;
+  return `${string} its beautiful outside`
 }
-    console.log (greet("elijah"));
-
-
-
+var greeting = greet('Hello World')
+console.log(greeting);
 // Q6
 // Write a function called `madlib` that takes
-// 4 or more parameters (words). The function 
+// 4 or more parameters (words). The function
 // should insert the words into a pre-defined
 // sentence. Finally the function should return
 // that sentence.
@@ -93,12 +86,13 @@ function greet(name){
 // strings. For example:
 // words: "quick", "fox", "fence"
 // sentence: "quick brown fox jumps over the fence"
-function madlib(tong , yong , fong  , wong){
-    return " I am " + tong + " coding in " + yong +  " because its " + fong + " and I like " + wong;
+
+function madLib(param1, param2, param3, param4) {
+  var sentence = `The ${param1} brown ${param2} jumps over the ${param3} to get the ${param4}`
+  return sentence
 }
-console.log(madlib("currently" , "Javascript" , "fun" , "it"));
 
-
-
+var sentence1 = madLib('quick', 'fox', 'fence', 'hare')
+console.log(sentence1);
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
