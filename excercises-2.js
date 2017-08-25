@@ -41,27 +41,90 @@ console.log(returned1);
 function rovarspraket(phrase) {
   //...
 }
+//Begin exercise
+function checkConsonants(letterToCheck) {
+  var consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+  var isConsonant = false;
+
+  for (i = 0; i < consonants.length; i++) {
+    if (letterToCheck == consonants[i]) {
+      isConsonant = true;
+    }
+  }
+  return isConsonant;
+}
+
+function translate(funString, letterO) {
+
+  var newString = '';
+
+  for (var i = 0; i < funString.length; i++) {
+    if (checkConsonants(funString[i])) {
+      newString += funString[i] + letterO + funString[i];
+    } else {
+      newString += funString[i];
+    }
+  }
+  console.log('The "rövarspråket" result is: ' + '"' + newString + '"');
+}
+
+translate('this is fun', 'o');
 // ---------------------
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
-function reverse() {
-  //...
+function reverse(str) {
+  var splitString = str.split("");
+  var reverseArray = splitString.reverse()
+  var joinArray = reverseArray.join("")
+
+  return joinArray;
 }
+
+var reverser = reverse('Hello')
+
+console.log(reverser);
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
 function findLongestWord(words) {
-  //...
+  var longestWord = words.sort(function(a, b) {
+    return b.length - a.length
+  })[0]
+  return longestWord
 }
+
+var array = ['hello', 'bob', 'roberto']
+var finder = findLongestWord(array)
+console.log(finder);
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
-function filterLongWords(words, i) {
-  //...
+var filterLongWords = function(array, i) {
+  var newArray = [];
+  array.forEach(function(element) {
+    if (element.length > i) {
+      newArray.push(element)
+    };
+  });
+  return newArray;
 }
+
+console.log(filterLongWords(["hello", "my", "name", "is", "tenkai"], 3));
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
 function charFreq(string) {
-  //...
+  var freq = {}
+  for (var i = 0; i < string.length; i++) {
+    var character = string.charAt(i)
+    if (freq[character]) {
+      freq[character]++;
+    } else {
+      freq[character] = 1
+    }
+  }
+  return freq
 }
+
+var checkfreq = charFreq("abbabcbdbabdbdbabababcbcbab")
+console.log(checkfreq);
